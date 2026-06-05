@@ -2,10 +2,14 @@ const path = require("path");
 const perf_hooks = require("perf_hooks");
 const { Worker } = require("worker_threads");
 
+const mapPerfomance = new Map([['generator', 0], ['remainder', 0], ['mainWithouThreads', 0]]);
 const performanceObserver = new perf_hooks.PerformanceObserver(
   (items, observer) => {
     for (const entry of items.getEntries()) {
-      console.log(entry.name, entry.duration);
+      if (mapPerfomance.has(entry.name)) {
+        const prev = mapPerfomance.get(entry.name);
+        mapPerfomance.set(entry.name, prev + entry.duration);
+      }
     }
   },
 );
@@ -54,15 +58,25 @@ function remainder(arr) {
   });
 }
 
+function mainWithouThreads(length) {
+  performance.mark("mainWithouThreads start");
+  const generatedArr = Array.from({ length }, (_, i) => 0 + i);
+  const remaindedArr = generatedArr.filter((i) => i % 3 === 0);
+  console.log("RESULT WITHOUT THREADS: ", remaindedArr.length);
+  performance.mark("mainWithouThreads end");
+  performance.measure("mainWithouThreads", "mainWithouThreads start", "mainWithouThreads end");
+}
+
 const threadesSize = 4;
 async function main(length) {
   try {
     const partsOfArray = [];
     const partsLength = Math.floor(length / 4);
-    const partsOfRemains = length % 2;
+    const partsOfRemains = length % threadesSize;
     for (let i = 0; i < threadesSize; i += 1) {
       partsOfArray.push({
-        length: i+1 === threadesSize ? partsLength + partsOfRemains : partsLength,
+        length:
+          i + 1 === threadesSize ? partsLength + partsOfRemains : partsLength,
         start: partsLength * i,
       });
     }
@@ -73,8 +87,10 @@ async function main(length) {
   } catch (error) {
     console.log("WoW Error", error);
   } finally {
+    console.log(mapPerfomance);
     setImmediate(() => performanceObserver.disconnect());
   }
 }
 
+mainWithouThreads(300000);
 main(300000);
