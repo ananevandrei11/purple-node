@@ -1,6 +1,7 @@
 const path = require("path");
 const perf_hooks = require("perf_hooks");
 const { Worker } = require("worker_threads");
+const { cpus } = require('os');
 
 const mapPerfomance = new Map([['generator', 0], ['remainder', 0], ['mainWithouThreads', 0]]);
 const performanceObserver = new perf_hooks.PerformanceObserver(
@@ -67,11 +68,11 @@ function mainWithouThreads(length) {
   performance.measure("mainWithouThreads", "mainWithouThreads start", "mainWithouThreads end");
 }
 
-const threadesSize = 4;
+const threadesSize = cpus().length;
 async function main(length) {
   try {
     const partsOfArray = [];
-    const partsLength = Math.floor(length / 4);
+    const partsLength = Math.floor(length / threadesSize);
     const partsOfRemains = length % threadesSize;
     for (let i = 0; i < threadesSize; i += 1) {
       partsOfArray.push({
