@@ -1,0 +1,18 @@
+# Не тащим в образ зависимости с хоста — поставим их внутри чисто.
+node_modules
+
+# Секреты и локальное окружение не должны попадать в образ.
+.env
+.env.*
+*.pem
+*.key
+
+# Git и служебное.
+.git
+.gitignore
+Dockerfile
+.dockerignore
+
+# Прочий мусор.
+npm-debug.log*
+.DS_Store
