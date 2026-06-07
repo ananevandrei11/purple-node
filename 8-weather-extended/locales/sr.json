@@ -1,0 +1,36 @@
+{
+  "error": "GREŠKA",
+  "success": "USPEH",
+  "help": "POMOĆ",
+  "weather": "VREME",
+  "somethingWentWrong": "Nešto je pošlo naopako",
+  "token": {
+    "tokenUndefinded": "Token nije definisan. Koristite komandu - -t [API_KEY]",
+    "tokenSaved": "Token je sačuvan"
+  },
+  "city": {
+    "cityUndefinded": "Grad nije definisan. Koristite komandu - -s [CITY]",
+    "citySaved": "Gradovi su sačuvani",
+    "cityRemoved": "Grad je uklonjen"
+  },
+  "lang": {
+    "langUndefinded": "Jezik nije definisan. Koristite komandu - -l [LANG]",
+    "langSaved": "Jezik je sačuvan"
+  },
+  "helpOptions": {
+    "withoutParams": "Bez parametara - prikaži vremensku prognozu",
+    "city": " -s [CITY...] da postavite gradove ",
+    "remove": " -r [CITY...] da uklonite gradove ",
+    "help": " -h da prikažete pomoć ",
+    "token": " -t [API_KEY] da sačuvate token ",
+    "lang": " -l [LANG] da postavite jezik "
+  },
+  "weatherOptions": {
+    "location": "{{name}}, {{country}}",
+    "condition": "{{emoji}} {{text}}",
+    "temperature": "Temperatura: {{temp}}°C (oseća se kao {{feelsLike}}°C)",
+    "humidity": "Vlažnost: {{humidity}}%",
+    "wind": "Vetar: {{wind}} km/h, {{dir}}",
+    "pressure": "Pritisak: {{pressure}} mb"
+  }
+}
