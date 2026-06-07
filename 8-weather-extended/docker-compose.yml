@@ -1,0 +1,16 @@
+services:
+  weather:
+    build: .
+    image: weather-cli
+    container_name: weather-cli
+    # install deps into the anon volume on every start, then keep alive
+    entrypoint: ["sh", "-c", "npm install --omit=dev && sleep infinity"]
+    environment:
+      # home directory = /app, so weather-data.json lands in the project
+      - HOME=/app
+      # disable ash history — no need for it in a throwaway container
+      - HISTFILE=/dev/null
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app

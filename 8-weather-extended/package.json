@@ -1,0 +1,24 @@
+{
+	"name": "weather-cli-frontendlabtest",
+	"version": "1.0.0",
+	"description": "CLI for getting weather",
+	"main": "weather.js",
+	"bin": {
+		"weather": "weather.js"
+	},
+	"type": "module",
+	"scripts": {
+		"start": "node weather.js"
+	},
+	"keywords": [
+		"cli",
+		"weather"
+	],
+	"author": "frontendlabtest",
+	"license": "ISC",
+	"dependencies": {
+		"chalk": "5.6.2",
+		"i18next": "26.3.1",
+		"i18next-fs-backend": "2.6.6"
+	}
+}

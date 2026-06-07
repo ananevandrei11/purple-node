@@ -1,0 +1,36 @@
+{
+  "error": "ERROR",
+  "success": "SUCCESS",
+  "help": "HELP",
+  "weather": "WEATHER",
+  "somethingWentWrong": "Something went wrong",
+  "token": {
+    "tokenUndefinded": "Token is undefined. Use command - -t [API_KEY]",
+    "tokenSaved": "Token is saved"
+  },
+  "city": {
+    "cityUndefinded": "City is undefined. Use command - -s [CITY]",
+    "citySaved": "Cities are saved",
+    "cityRemoved": "City is removed"
+  },
+  "lang": {
+    "langUndefinded": "Language is undefined. Use command - -l [LANG]",
+    "langSaved": "Language is saved"
+  },
+  "helpOptions": {
+    "withoutParams": "Without parameters - show weather",
+    "city": " -s [CITY...] to set the cities ",
+    "remove": " -r [CITY...] to remove the cities ",
+    "help": " -h to show help ",
+    "token": " -t [API_KEY] to save the token ",
+    "lang": " -l [LANG] to set the language "
+  },
+  "weatherOptions": {
+    "location": "{{name}}, {{country}}",
+    "condition": "{{emoji}} {{text}}",
+    "temperature": "Temperature: {{temp}}°C (feels like {{feelsLike}}°C)",
+    "humidity": "Humidity: {{humidity}}%",
+    "wind": "Wind: {{wind}} kph, {{dir}}",
+    "pressure": "Pressure: {{pressure}} mb"
+  }
+}
