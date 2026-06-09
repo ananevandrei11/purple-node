@@ -15,9 +15,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start:weather-api": "node --env-file=.env 9-weather-api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "node-notifier": "10.0.1"
   }
 }
