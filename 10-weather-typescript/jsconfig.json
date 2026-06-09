@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "strict": true
+  },
+  "include": ["**/*.js", "i18next.d.ts"],
+  "exclude": ["node_modules"]
+}
