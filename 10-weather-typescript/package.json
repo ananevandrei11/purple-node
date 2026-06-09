@@ -1,0 +1,32 @@
+{
+	"name": "weather-cli-frontendlabtest",
+	"version": "1.0.0",
+	"description": "CLI for getting weather",
+	"main": "weather.ts",
+	"bin": {
+		"weather": "weather.ts"
+	},
+	"type": "module",
+	"scripts": {
+		"start": "node dist/weather.js",
+    "dev": "node --watch weather.ts",
+    "build": "tsc --noEmit false --outDir dist",
+    "typecheck": "tsc --noEmit"
+	},
+	"keywords": [
+		"cli",
+		"weather"
+	],
+	"author": "frontendlabtest",
+	"license": "ISC",
+	"dependencies": {
+		"chalk": "5.6.2",
+		"i18next": "26.3.1",
+		"i18next-fs-backend": "2.6.6"
+	},
+	"devDependencies": {
+    "@types/node": "24.13.1",
+    "tsx": "4.22.4",
+    "typescript": "6.0.3"
+  }
+}

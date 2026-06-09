@@ -1,0 +1,36 @@
+{
+  "error": "ОШИБКА",
+  "success": "УСПЕХ",
+  "help": "ПОМОЩЬ",
+  "weather": "ПОГОДА",
+  "somethingWentWrong": "Что-то пошло не так",
+  "token": {
+    "tokenUndefinded": "Токен не задан. Используйте команду - -t [API_KEY]",
+    "tokenSaved": "Токен сохранён"
+  },
+  "city": {
+    "cityUndefinded": "Город не задан. Используйте команду - -s [CITY]",
+    "citySaved": "Города сохранены",
+    "cityRemoved": "Город удалён"
+  },
+  "lang": {
+    "langUndefinded": "Язык не задан. Используйте команду - -l [LANG]",
+    "langSaved": "Язык сохранён"
+  },
+  "helpOptions": {
+    "withoutParams": "Без параметров - показать погоду",
+    "city": " -s [CITY...] чтобы задать города ",
+    "remove": " -r [CITY...] чтобы удалить города ",
+    "help": " -h чтобы показать справку ",
+    "token": " -t [API_KEY] чтобы сохранить токен ",
+    "lang": " -l [LANG] чтобы задать язык "
+  },
+  "weatherOptions": {
+    "location": "{{name}}, {{country}}",
+    "condition": "{{emoji}} {{text}}",
+    "temperature": "Температура: {{temp}}°C (ощущается как {{feelsLike}}°C)",
+    "humidity": "Влажность: {{humidity}}%",
+    "wind": "Ветер: {{wind}} км/ч, {{dir}}",
+    "pressure": "Давление: {{pressure}} мбар"
+  }
+}
